@@ -45,7 +45,7 @@ class HTTPHandler(BaseHTTPRequestHandler):
         self.send_header('Location', '/')
         self.end_headers()
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-            server = "localhost", 5000
+            server = TCP_IP, TCP_PORT
             sock.connect(server)
             print(f'Connection established {server}')
             print(f'Send data: {data_dict}')
